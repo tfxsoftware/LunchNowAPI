@@ -13,13 +13,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Order {
+    
+    @Id
+    private long Ido;
+    private LocalDateTime orderDate;
+    private Restaurant restaurant;
+    private User user;
 
-	@Id
-	private Long id;
-	private String name;
-	private LocalDateTime creationDate;
-	private String email;
-	private String password;
 
 }

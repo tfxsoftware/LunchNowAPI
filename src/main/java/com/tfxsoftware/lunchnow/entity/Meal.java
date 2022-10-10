@@ -1,6 +1,5 @@
 package com.tfxsoftware.lunchnow.entity;
 
-import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,13 +12,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-
-	@Id
-	private Long id;
-	private String name;
-	private LocalDateTime creationDate;
-	private String email;
-	private String password;
+public class Meal {
+    @Id
+    private long Idm;
+    private String name;
+    private String price;
+    private Restaurant restaurant;
 
 }

@@ -42,4 +42,9 @@ public class UserController {
 		 userService.deleteUser(id);
 		 return "deleted succesfully.";
 	}
+	
+	@GetMapping("/getuser/{user_id}")
+	public User getAUser(@PathVariable("user_id") Long id){
+		return userService.getAUser(id);
+	}
 }

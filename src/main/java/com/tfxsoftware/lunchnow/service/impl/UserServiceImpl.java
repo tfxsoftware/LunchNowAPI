@@ -3,6 +3,8 @@ package com.tfxsoftware.lunchnow.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import javax.management.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +35,10 @@ public class UserServiceImpl implements UserService {
 			User userEntity = findById.get();
 			if (user.getName() != null && !user.getName().isEmpty())
 				userEntity.setName(user.getName());
-			if (user.getAge() != null)
-				userEntity.setAge(user.getAge());
+			if (user.getEmail() != null && !user.getEmail().isEmpty())
+				userEntity.setEmail(user.getEmail());
+			if (user.getPassword() != null && !user.getPassword().isEmpty())
+				userEntity.setPassword(user.getPassword());
 			return userRepository.save(userEntity);
 		}
 		return null;
@@ -45,4 +49,8 @@ public class UserServiceImpl implements UserService {
 		userRepository.deleteById(id);
 	}
 
+	public User getAUser(long id){
+		Optional<User> findById = userRepository.findById(id);
+		return findById.get();
+	}
 }
