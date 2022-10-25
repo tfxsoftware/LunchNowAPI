@@ -27,7 +27,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
-	public Restaurant updateRestaurant(Long id, Restaurant Restaurant) {
+	public Restaurant updateRestaurant(String id, Restaurant Restaurant) {
 		Optional<Restaurant> findById = restaurantRepository.findById(id);
 		if (findById.isPresent()) {
 			Restaurant restaurantEntity = findById.get();
@@ -43,11 +43,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
-	public void deleteRestaurant(Long id) {
+	public void deleteRestaurant(String id) {
 		restaurantRepository.deleteById(id);
 	}
 
-	public Restaurant getARestaurant(long id){
+	public Restaurant getARestaurant(String id){
 		Optional<Restaurant> findById = restaurantRepository.findById(id);
 		return findById.get();
 	}

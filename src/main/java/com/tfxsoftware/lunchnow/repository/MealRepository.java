@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.tfxsoftware.lunchnow.entity.Meal;
 
 
-public interface MealRepository extends MongoRepository<Meal, Long> {
+public interface MealRepository extends MongoRepository<Meal, String> {
 
 }

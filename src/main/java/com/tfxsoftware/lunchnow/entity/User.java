@@ -16,10 +16,21 @@ import lombok.NoArgsConstructor;
 public class User {
 
 	@Id
-	private Long id;
+	private String idu;
 	private String name;
+	private String cpf;
 	private LocalDateTime creationDate;
 	private String email;
 	private String password;
+	private String userImgUrl;
+	
+	public User(String name, String cpf, LocalDateTime creationDate, String email, String password, String userImgUrl) {
+		this.name = name;
+		this.cpf = cpf;
+		this.creationDate = creationDate;
+		this.email = email;
+		this.password = password;
+		this.userImgUrl = userImgUrl;
+	}
 
 }

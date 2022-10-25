@@ -3,7 +3,7 @@ package com.tfxsoftware.lunchnow.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import javax.management.Query;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User updateUser(Long id, User user) {
+	public User updateUser(String id, User user) {
 		Optional<User> findById = userRepository.findById(id);
 		if (findById.isPresent()) {
 			User userEntity = findById.get();
@@ -45,11 +45,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleteUser(Long id) {
+	public void deleteUser(String id) {
 		userRepository.deleteById(id);
 	}
 
-	public User getAUser(long id){
+	public User getAUser(String id){
 		Optional<User> findById = userRepository.findById(id);
 		return findById.get();
 	}

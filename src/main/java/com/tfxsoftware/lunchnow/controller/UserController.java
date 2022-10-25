@@ -33,18 +33,18 @@ public class UserController {
 	}
 	
 	@PutMapping("/update/{user_id}")
-	public User updateUser(@RequestBody User user, @PathVariable("user_id") Long id) {
+	public User updateUser(@RequestBody User user, @PathVariable("user_id") String id) {
 		return userService.updateUser(id, user);
 	}
 	
 	@DeleteMapping("/delete/{user_id}")
-	public String deleteUser(@PathVariable("user_id") Long id) {
+	public String deleteUser(@PathVariable("user_id") String id) {
 		 userService.deleteUser(id);
 		 return "deleted succesfully.";
 	}
 	
 	@GetMapping("/getuser/{user_id}")
-	public User getAUser(@PathVariable("user_id") Long id){
+	public User getAUser(@PathVariable("user_id") String id){
 		return userService.getAUser(id);
 	}
 }

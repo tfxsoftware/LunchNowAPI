@@ -14,9 +14,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Meal {
     @Id
-    private long Idm;
+    private String Idm;
     private String name;
-    private String price;
-    private Restaurant restaurant;
+    private float price;
+    private String Idr;
+    private String mealImgUrl;
+    
+    public Meal(String name, float price, String idr, String mealImgUrl) {
+        this.name = name;
+        this.price = price;
+        this.Idr = idr;
+        this.mealImgUrl = mealImgUrl;
+    }
 
 }

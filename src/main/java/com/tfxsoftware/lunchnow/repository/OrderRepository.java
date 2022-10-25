@@ -2,9 +2,9 @@ package com.tfxsoftware.lunchnow.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.tfxsoftware.lunchnow.entity.User;
+import com.tfxsoftware.lunchnow.entity.Order;
 
 
-public interface UserRepository extends MongoRepository<User, String> {
+public interface OrderRepository extends MongoRepository<Order, String> {
 
 }

@@ -33,18 +33,18 @@ public class RestaurantController {
 	}
 	
 	@PutMapping("/update/{restaurant_id}")
-	public Restaurant updateRestaurant(@RequestBody Restaurant restaurant, @PathVariable("restaurant_id") Long id) {
+	public Restaurant updateRestaurant(@RequestBody Restaurant restaurant, @PathVariable("restaurant_id") String id) {
 		return restaurantService.updateRestaurant(id, restaurant);
 	}
 	
 	@DeleteMapping("/delete/{restaurant_id}")
-	public String deleteRestaurant(@PathVariable("restaurant_id") Long id) {
+	public String deleteRestaurant(@PathVariable("restaurant_id") String id) {
 		 restaurantService.deleteRestaurant(id);
 		 return "deleted succesfully.";
 	}
 	
 	@GetMapping("/getrestaurant/{restaurant_id}")
-	public Restaurant getARestaurant(@PathVariable("restaurant_id") Long id){
+	public Restaurant getARestaurant(@PathVariable("restaurant_id") String id){
 		return restaurantService.getARestaurant(id);
 	}
 }

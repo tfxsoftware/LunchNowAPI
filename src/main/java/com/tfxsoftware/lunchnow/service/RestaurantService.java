@@ -11,11 +11,11 @@ public interface RestaurantService {
 
 	public List<Restaurant> getRestaurants();
 
-	public Restaurant updateRestaurant(Long id, Restaurant restaurant);
+	public Restaurant updateRestaurant(String id, Restaurant restaurant);
 
-	public void deleteRestaurant(Long id);
+	public void deleteRestaurant(String id);
 
-	public Restaurant getARestaurant(long id);
+	public Restaurant getARestaurant(String id);
 
 	
 }

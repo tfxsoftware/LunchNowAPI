@@ -10,11 +10,11 @@ public interface UserService {
 
 	public List<User> getUsers();
 
-	public User updateUser(Long id, User user);
+	public User updateUser(String id, User user);
 
-	public void deleteUser(Long id);
+	public void deleteUser(String id);
 
-	public User getAUser(long id);
+	public User getAUser(String id);
 
 	
 }

@@ -9,13 +9,13 @@ public interface MealService {
 
 	public Meal saveMeal(Meal meal);
 
-	public List<Meal> getMealsByRestaurant();
+	public List<Meal> getMealsByRestaurant(String Idr);
 
-	public Meal updateMeal(Long id, Meal meal);
+	public Meal updateMeal(String id, Meal meal);
 
-	public void deleteMeal(Long id);
+	public void deleteMeal(String id);
 
-	public Meal getAMeal(long id);
+	public Meal getAMeal(String id);
 
 	
 }

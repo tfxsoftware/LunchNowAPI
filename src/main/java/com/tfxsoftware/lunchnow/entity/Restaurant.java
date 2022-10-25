@@ -17,10 +17,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Restaurant {
     @Id
-    private long Idr;
+    private String Idr;
     private String name;
+    private String cnpj;
     private String local;
     private LocalDateTime registryDate;
     private String email;
     private String password;
+    private String restaurantImgUrl;
+    public Restaurant(String name, String cnpj, String local, LocalDateTime registryDate, String email, String password,
+            String restaurantImgUrl) {
+        this.name = name;
+        this.cnpj = cnpj;
+        this.local = local;
+        this.registryDate = registryDate;
+        this.email = email;
+        this.password = password;
+        this.restaurantImgUrl = restaurantImgUrl;
+    }
 }
