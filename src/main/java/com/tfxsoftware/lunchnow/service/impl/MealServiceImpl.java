@@ -1,8 +1,12 @@
 package com.tfxsoftware.lunchnow.service.impl;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import java.util.Optional;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +50,14 @@ public class MealServiceImpl implements MealService {
 
     @Override
     public List<Meal> getMealsByRestaurant(String Idr) {
-        return null;
+        List<Meal> ret = new ArrayList<>();
+		List<Meal> list = mealRepository.findAll();
+		Iterator<Meal> cursor = list.iterator();
+		while (cursor.hasNext()){
+			Meal current = cursor.next();
+			if (current.getIdr().equals(Idr)) ret.add(current);
+		}
+		return ret;
     }
 }
 

@@ -16,5 +16,7 @@ public interface UserService {
 
 	public User getAUser(String id);
 
+	public User userAuth(String email, String pass);
+
 	
 }

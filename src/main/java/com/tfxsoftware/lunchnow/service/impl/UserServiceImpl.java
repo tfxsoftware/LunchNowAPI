@@ -2,6 +2,7 @@ package com.tfxsoftware.lunchnow.service.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Iterator;
 
 
 
@@ -39,6 +40,10 @@ public class UserServiceImpl implements UserService {
 				userEntity.setEmail(user.getEmail());
 			if (user.getPassword() != null && !user.getPassword().isEmpty())
 				userEntity.setPassword(user.getPassword());
+			if (user.getCpf() != null && !user.getCpf().isEmpty())
+				userEntity.setCpf(user.getCpf());
+			if (user.getUserImgUrl() != null && !user.getUserImgUrl().isEmpty())
+				userEntity.setUserImgUrl(user.getUserImgUrl());
 			return userRepository.save(userEntity);
 		}
 		return null;
@@ -52,5 +57,16 @@ public class UserServiceImpl implements UserService {
 	public User getAUser(String id){
 		Optional<User> findById = userRepository.findById(id);
 		return findById.get();
+	}
+
+	public User userAuth(String email, String pass){
+		List<User> list = userRepository.findAll();
+		Iterator<User> cursor = list.iterator();
+
+		while (cursor.hasNext()){
+			User current = cursor.next();
+			if (current.getEmail().equals(email) && current.getPassword().equals(pass)) return current;	
+		}
+		return null;
 	}
 }

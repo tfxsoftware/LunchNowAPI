@@ -1,7 +1,9 @@
 package com.tfxsoftware.lunchnow.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,4 +49,11 @@ public class UserController {
 	public User getAUser(@PathVariable("user_id") String id){
 		return userService.getAUser(id);
 	}
+
+	@GetMapping("/authuser")
+		public User authentication (@RequestBody Document credentials){
+			String email = (String) credentials.get("Email");
+			String pass = (String) credentials.get("Password");
+			return userService.userAuth(email, pass);
+		}
 }
