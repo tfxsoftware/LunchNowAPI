@@ -37,7 +37,15 @@ public class RestaurantServiceImpl implements RestaurantService {
 				restaurantEntity.setEmail(Restaurant.getEmail());
 			if (Restaurant.getPassword() != null && !Restaurant.getPassword().isEmpty())
 				restaurantEntity.setPassword(Restaurant.getPassword());
-			return restaurantRepository.save(restaurantEntity);
+			if (Restaurant.getRestaurantImgUrl() != null && !Restaurant.getRestaurantImgUrl().isEmpty())
+				restaurantEntity.setRestaurantImgUrl(Restaurant.getRestaurantImgUrl());
+			if (Restaurant.getCnpj() != null && !Restaurant.getCnpj().isEmpty())
+				restaurantEntity.setCnpj(Restaurant.getCnpj());
+			if (Restaurant.getLocal() != null && !Restaurant.getLocal().isEmpty())
+				restaurantEntity.setLocal(Restaurant.getLocal());
+			
+				return restaurantRepository.save(restaurantEntity);
+
 		}
 		return null;
 	}

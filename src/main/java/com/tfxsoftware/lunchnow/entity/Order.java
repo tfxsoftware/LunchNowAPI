@@ -21,13 +21,13 @@ public class Order {
     private LocalDateTime orderDate;
     private String Idr;
     private String Idu;
-    private List<String> Idm;
+    private List<String> Idms;
     private float totalPrice;
     public Order(LocalDateTime orderDate, String idr, String idu, List<String> idm, float totalPrice) {
         this.orderDate = orderDate;
         this.Idr = idr;
         this.Idu = idu;
-        this.Idm = idm;
+        this.Idms = idm;
         this.totalPrice = totalPrice;
     }
 

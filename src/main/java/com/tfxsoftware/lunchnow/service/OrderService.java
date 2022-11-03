@@ -9,10 +9,8 @@ public interface OrderService {
 
 	public Order saveOrder(Order order);
 
-	public List<Order> getOrders();
-
-	public Order updateOrder(String id, Order order);
-
+	//private Float calculateTotal(List<String> meals);
+	
 	public void deleteOrder(String id);
 
 	public Order getAOrder(String id);

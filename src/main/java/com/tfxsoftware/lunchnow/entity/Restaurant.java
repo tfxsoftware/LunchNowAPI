@@ -2,7 +2,6 @@ package com.tfxsoftware.lunchnow.entity;
 
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -25,6 +24,7 @@ public class Restaurant {
     private String email;
     private String password;
     private String restaurantImgUrl;
+    
     public Restaurant(String name, String cnpj, String local, LocalDateTime registryDate, String email, String password,
             String restaurantImgUrl) {
         this.name = name;

@@ -23,19 +23,6 @@ public class OrderServiceImpl implements OrderService {
 		return restaurantRepository.save(Order);
 	}
 
-	@Override
-	public List<Order> getOrders() {
-		return restaurantRepository.findAll();
-	}
-
-	@Override
-	public Order updateOrder(String id, Order Order) {
-		Optional<Order> findById = restaurantRepository.findById(id);
-		if (findById.isPresent()) {
-			Order orderEntity = findById.get();
-		}
-		return null;
-	}
 
 	@Override
 	public void deleteOrder(String id) {

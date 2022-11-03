@@ -12,17 +12,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Meal {
+public class Meal {  
     @Id
     private String Idm;
-    private String name;
-    private float price;
+    private String Name;
+    private Float Price;
     private String Idr;
     private String mealImgUrl;
     
-    public Meal(String name, float price, String idr, String mealImgUrl) {
-        this.name = name;
-        this.price = price;
+    public Meal(String name, Float price, String idr, String mealImgUrl) {
+        this.Name = name;
+        this.Price = price;
         this.Idr = idr;
         this.mealImgUrl = mealImgUrl;
     }

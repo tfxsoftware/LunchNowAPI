@@ -33,6 +33,10 @@ public class MealServiceImpl implements MealService {
 			Meal mealEntity = findById.get();
 			if (Meal.getName() != null && !Meal.getName().isEmpty())
 				mealEntity.setName(Meal.getName());
+			if (Meal.getPrice() != null && Meal.getPrice() != 0)
+				mealEntity.setPrice(Meal.getPrice());
+			if (Meal.getMealImgUrl() != null && !Meal.getMealImgUrl().isEmpty())
+				mealEntity.setMealImgUrl(Meal.getMealImgUrl());
 			return mealRepository.save(mealEntity);
 		}
 		return null;
