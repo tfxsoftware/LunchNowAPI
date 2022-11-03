@@ -17,5 +17,9 @@ public interface OrderService {
 
 	public Order getAOrder(String id);
 
+	public List<Order> getOrdersByRestaurant (String idr);
+
+	public List<Order> getOrdersByUser (String Idu);
+
 	
 }

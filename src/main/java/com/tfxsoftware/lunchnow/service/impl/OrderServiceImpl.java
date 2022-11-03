@@ -1,5 +1,7 @@
 package com.tfxsoftware.lunchnow.service.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +45,28 @@ public class OrderServiceImpl implements OrderService {
 	public Order getAOrder(String id){
 		Optional<Order> findById = restaurantRepository.findById(id);
 		return findById.get();
+	}
+
+	@Override
+	public List<Order> getOrdersByRestaurant(String idr) {
+		List<Order> ret = new ArrayList<Order>();
+		Iterator<Order> cursor = restaurantRepository.findAll().iterator();
+		while (cursor.hasNext()){
+			Order current = cursor.next();
+			if (current.getIdr().equals(idr)) ret.add(current);
+		}
+		return ret;
+	}
+
+	@Override
+	public List<Order> getOrdersByUser(String Idu) {
+		List<Order> ret = new ArrayList<Order>();
+		Iterator<Order> cursor = restaurantRepository.findAll().iterator();
+		while (cursor.hasNext()){
+			Order current = cursor.next();
+			if (current.getIdr().equals(Idu)) ret.add(current);
+		}
+		return ret;
 	}
 }
 
