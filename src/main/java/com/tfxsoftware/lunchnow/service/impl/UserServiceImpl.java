@@ -21,6 +21,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User saveUser(User user) {
+		List<User> list = userRepository.findAll();
+		Iterator<User> cursor = list.iterator();
+
+		while (cursor.hasNext()){
+			User current = cursor.next();
+			if (current.getEmail().equals(user.getEmail()) || current.getCpf().equals(user.getCpf())) return null;	
+		}
 		return userRepository.save(user);
 	}
 

@@ -1,5 +1,6 @@
 package com.tfxsoftware.lunchnow.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +37,7 @@ public class UserController {
 	
 	@PutMapping("/update/{user_id}")
 	public User updateUser(@RequestBody User user, @PathVariable("user_id") String id) {
+		user.setCreationDate(LocalDateTime.now());
 		return userService.updateUser(id, user);
 	}
 	
@@ -50,10 +52,10 @@ public class UserController {
 		return userService.getAUser(id);
 	}
 
-	@GetMapping("/authuser")
+	@PostMapping("/authuser")
 		public User authentication (@RequestBody Document credentials){
-			String email = (String) credentials.get("Email");
-			String pass = (String) credentials.get("Password");
+			String email = (String) credentials.get("email");
+			String pass = (String) credentials.get("password");
 			return userService.userAuth(email, pass);
 		}
 }

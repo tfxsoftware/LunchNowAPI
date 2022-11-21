@@ -41,8 +41,8 @@ public class RestaurantServiceImpl implements RestaurantService {
 				restaurantEntity.setRestaurantImgUrl(Restaurant.getRestaurantImgUrl());
 			if (Restaurant.getCnpj() != null && !Restaurant.getCnpj().isEmpty())
 				restaurantEntity.setCnpj(Restaurant.getCnpj());
-			if (Restaurant.getLocal() != null && !Restaurant.getLocal().isEmpty())
-				restaurantEntity.setLocal(Restaurant.getLocal());
+			if (Restaurant.getAddress() != null);
+				restaurantEntity.setAddress(Restaurant.getAddress());
 			
 				return restaurantRepository.save(restaurantEntity);
 

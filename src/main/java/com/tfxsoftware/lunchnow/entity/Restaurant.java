@@ -19,17 +19,17 @@ public class Restaurant {
     private String Idr;
     private String name;
     private String cnpj;
-    private String local;
+    private Address address;
     private LocalDateTime registryDate;
     private String email;
     private String password;
     private String restaurantImgUrl;
     
-    public Restaurant(String name, String cnpj, String local, LocalDateTime registryDate, String email, String password,
+    public Restaurant(String name, String cnpj, Address adress, LocalDateTime registryDate, String email, String password,
             String restaurantImgUrl) {
         this.name = name;
         this.cnpj = cnpj;
-        this.local = local;
+        this.address = adress;
         this.registryDate = registryDate;
         this.email = email;
         this.password = password;

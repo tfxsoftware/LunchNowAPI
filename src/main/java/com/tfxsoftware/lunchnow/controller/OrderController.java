@@ -1,5 +1,6 @@
 package com.tfxsoftware.lunchnow.controller;
 
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.List;
 
@@ -27,13 +28,7 @@ public class OrderController {
 	
 	@PostMapping("/save")
 	public Order saveOrder(@RequestBody Order order) {
-		float price = 0;
-		Iterator<String> meals = order.getIdms().iterator();
-		while(meals.hasNext()){
-			Meal meal = mealService.getAMeal((String) meals.next());
-			price = price + meal.getPrice();
-		}
-		order.setTotalPrice(Float.valueOf(price));
+
 		return orderService.saveOrder(order);
 	}
 	
