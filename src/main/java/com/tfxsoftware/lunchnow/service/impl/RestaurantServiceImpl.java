@@ -1,7 +1,11 @@
 package com.tfxsoftware.lunchnow.service.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,6 +62,18 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public Restaurant getARestaurant(String id){
 		Optional<Restaurant> findById = restaurantRepository.findById(id);
 		return findById.get();
+	}
+
+	public List<Restaurant> getRestaurantByType(String type){
+		Iterator<Restaurant> cursor = restaurantRepository.findAll().iterator();
+		List<Restaurant> listByType = new ArrayList<Restaurant>();
+		while(cursor.hasNext()){
+			Restaurant current = cursor.next();
+			if (current.getType().equals(type)) listByType.add(current);
+		}
+	
+	if(!listByType.isEmpty()) return listByType;
+	return null;
 	}
 }
 
