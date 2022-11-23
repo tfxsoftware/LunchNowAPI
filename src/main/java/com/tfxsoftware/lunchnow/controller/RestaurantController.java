@@ -48,7 +48,7 @@ public class RestaurantController {
 		return restaurantService.getARestaurant(id);
 	}
 
-	@GetMapping("/getrestaurant/{type}")
+	@GetMapping("/restaurantsbytype/{type}")
 	public Restaurant getRestaurantByType(@PathVariable("type") String type){
 		return restaurantService.getARestaurant(type);
 	}
