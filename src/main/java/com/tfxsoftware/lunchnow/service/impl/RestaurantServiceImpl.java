@@ -72,8 +72,19 @@ public class RestaurantServiceImpl implements RestaurantService {
 			if (current.getType().equals(type)) listByType.add(current);
 		}
 	
-	if(!listByType.isEmpty()) return listByType;
-	return null;
+	return listByType;
+	}
+
+	public List<Restaurant> getRestaurantByDistance(double x, double y){
+		Iterator<Restaurant> cursor = restaurantRepository.findAll().iterator();
+		List<Restaurant> listByDistance = new ArrayList<Restaurant>();
+		while(cursor.hasNext()){
+			Restaurant current = cursor.next();
+			double xr = current.getAddress().getX();
+			double yr = current.getAddress().getY();
+			if (Math.sqrt(Math.pow(xr - x, 2)+Math.pow(yr - y, 2))<=0.03) listByDistance.add(current);
+		}
+		return listByDistance;
 	}
 }
 

@@ -2,6 +2,7 @@ package com.tfxsoftware.lunchnow.controller;
 
 import java.util.List;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,7 +50,14 @@ public class RestaurantController {
 	}
 
 	@GetMapping("/restaurantsbytype/{type}")
-	public Restaurant getRestaurantByType(@PathVariable("type") String type){
-		return restaurantService.getARestaurant(type);
+	public List<Restaurant> getRestaurantByType(@PathVariable("type") String type){
+		return restaurantService.getRestaurantByType(type);
+	}
+
+	@PostMapping("/restaurantsbydistance")
+	public List<Restaurant> getRestaurantsByDistance(@RequestBody Document coordinates){
+		double x = (double) coordinates.get("x");
+		double y = (double) coordinates.get("y");
+		return restaurantService.getRestaurantByDistance(x, y);
 	}
 }

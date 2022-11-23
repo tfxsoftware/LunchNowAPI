@@ -18,5 +18,7 @@ public interface RestaurantService {
 	public Restaurant getARestaurant(String id);
 
 	public List<Restaurant> getRestaurantByType(String type);
+
+	public List<Restaurant> getRestaurantByDistance(double x, double y);
 	
 }
