@@ -9,7 +9,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tfxsoftware.lunchnow.entity.Meal;
 import com.tfxsoftware.lunchnow.entity.Order;
 import com.tfxsoftware.lunchnow.repository.OrderRepository;
 import com.tfxsoftware.lunchnow.service.OrderService;

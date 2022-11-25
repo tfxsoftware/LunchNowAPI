@@ -47,8 +47,6 @@ public class UserServiceImpl implements UserService {
 				userEntity.setEmail(user.getEmail());
 			if (user.getPassword() != null && !user.getPassword().isEmpty())
 				userEntity.setPassword(user.getPassword());
-			if (user.getCpf() != null && !user.getCpf().isEmpty())
-				userEntity.setCpf(user.getCpf());
 			if (user.getUserImgUrl() != null && !user.getUserImgUrl().isEmpty())
 				userEntity.setUserImgUrl(user.getUserImgUrl());
 			return userRepository.save(userEntity);

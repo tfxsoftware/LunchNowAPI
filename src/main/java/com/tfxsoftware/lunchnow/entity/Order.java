@@ -1,7 +1,7 @@
 package com.tfxsoftware.lunchnow.entity;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,13 +21,13 @@ public class Order {
     private LocalDateTime orderDate;
     private String Idr;
     private String Idu;
-    private List<String> Idms;
+    private String[] Idms;
     private float totalPrice;
-    public Order(LocalDateTime orderDate, String idr, String idu, List<String> idm, float totalPrice) {
+    public Order(LocalDateTime orderDate, String idr, String idu, String[] idms, float totalPrice) {
         this.orderDate = orderDate;
         this.Idr = idr;
         this.Idu = idu;
-        this.Idms = idm;
+        this.Idms = idms;
         this.totalPrice = totalPrice;
     }
 

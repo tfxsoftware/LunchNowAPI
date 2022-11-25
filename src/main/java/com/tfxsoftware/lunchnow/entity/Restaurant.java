@@ -1,7 +1,6 @@
 package com.tfxsoftware.lunchnow.entity;
 
 
-import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,10 +23,10 @@ public class Restaurant {
     private String email;
     private String password;
     private String restaurantImgUrl;
-    private double distance;
+    private int distancekm;
     
     public Restaurant(String name, String cnpj, Address adress, String email, String type, String password,
-            String restaurantImgUrl, double distance) {
+            String restaurantImgUrl, int distancekm) {
         this.name = name;
         this.cnpj = cnpj;
         this.address = adress;
@@ -35,6 +34,6 @@ public class Restaurant {
         this.email = email;
         this.password = password;
         this.restaurantImgUrl = restaurantImgUrl;
-        this.distance = distance;
+        this.distancekm = distancekm;
     }
 }

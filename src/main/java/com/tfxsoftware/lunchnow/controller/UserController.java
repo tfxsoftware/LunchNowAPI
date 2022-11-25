@@ -1,6 +1,5 @@
 package com.tfxsoftware.lunchnow.controller;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -37,7 +36,6 @@ public class UserController {
 	
 	@PutMapping("/update/{user_id}")
 	public User updateUser(@RequestBody User user, @PathVariable("user_id") String id) {
-		user.setCreationDate(LocalDateTime.now());
 		return userService.updateUser(id, user);
 	}
 	
