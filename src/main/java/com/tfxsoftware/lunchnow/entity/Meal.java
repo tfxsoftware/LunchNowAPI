@@ -19,12 +19,14 @@ public class Meal {
     private Float Price;
     private String Idr;
     private String mealImgUrl;
+    private String desc;
     
-    public Meal(String name, Float price, String idr, String mealImgUrl) {
+    public Meal(String name, Float price, String idr, String mealImgUrl, String desc) {
         this.Name = name;
         this.Price = price;
         this.Idr = idr;
         this.mealImgUrl = mealImgUrl;
+        this.desc = desc;
     }
 
 }

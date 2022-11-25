@@ -24,9 +24,10 @@ public class Restaurant {
     private String email;
     private String password;
     private String restaurantImgUrl;
+    private double distance;
     
     public Restaurant(String name, String cnpj, Address adress, String email, String type, String password,
-            String restaurantImgUrl) {
+            String restaurantImgUrl, double distance) {
         this.name = name;
         this.cnpj = cnpj;
         this.address = adress;
@@ -34,5 +35,6 @@ public class Restaurant {
         this.email = email;
         this.password = password;
         this.restaurantImgUrl = restaurantImgUrl;
+        this.distance = distance;
     }
 }

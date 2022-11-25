@@ -82,7 +82,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 			Restaurant current = cursor.next();
 			double xr = current.getAddress().getX();
 			double yr = current.getAddress().getY();
-			if (Math.sqrt(Math.pow(xr - x, 2)+Math.pow(yr - y, 2))<=0.03) listByDistance.add(current);
+			double distance = Math.sqrt(Math.pow(xr - x, 2)+Math.pow(yr - y, 2));
+			if (distance<=0.03){ 
+				current.setDistance(distance*100);
+				listByDistance.add(current);
+			}
 		}
 		return listByDistance;
 	}
