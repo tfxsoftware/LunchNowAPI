@@ -23,10 +23,10 @@ public class Restaurant {
     private String email;
     private String password;
     private String restaurantImgUrl;
-    private int distancekm;
+    private double distancekm;
     
     public Restaurant(String name, String cnpj, Address adress, String email, String type, String password,
-            String restaurantImgUrl, int distancekm) {
+            String restaurantImgUrl, double distancekm) {
         this.name = name;
         this.cnpj = cnpj;
         this.address = adress;
