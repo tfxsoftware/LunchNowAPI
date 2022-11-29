@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Restaurant {
     @Id
-    private String Idr;
+    private String idr;
     private String name;
     private String cnpj;
     private Address address;
