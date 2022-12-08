@@ -20,8 +20,9 @@ public class Meal {
     private String idr;
     private String mealImgUrl;
     private String desc;
+    private int minutesToPrepare;
     
-    public Meal(String name, Float price, String idr, String mealImgUrl, String desc) {
+    public Meal(String name, Float price, String idr, String mealImgUrl, String desc, int minutesToPrepare) {
         this.name = name;
         this.price = price;
         this.idr = idr;
