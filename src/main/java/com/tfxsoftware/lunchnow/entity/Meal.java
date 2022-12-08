@@ -28,6 +28,7 @@ public class Meal {
         this.idr = idr;
         this.mealImgUrl = mealImgUrl;
         this.desc = desc;
+        this.minutesToPrepare = minutesToPrepare;
     }
 
 }
