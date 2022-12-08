@@ -15,7 +15,7 @@ public interface MealService {
 
 	public void deleteMeal(String id);
 
-	public Meal getAMeal(String id);
+	public List<Meal> getAMeal(String id);
 
 	
 }

@@ -47,9 +47,11 @@ public class MealServiceImpl implements MealService {
 		mealRepository.deleteById(id);
 	}
 
-	public Meal getAMeal(String id){
+	public List<Meal> getAMeal(String id){
+		List<Meal> ret = new ArrayList<Meal>();
 		Optional<Meal> findById = mealRepository.findById(id);
-		return findById.get();
+		ret.add(findById.get());
+		return ret;
 	}
 
     @Override

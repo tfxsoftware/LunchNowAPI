@@ -44,7 +44,7 @@ public class MealController {
 	}
 	
 	@GetMapping("/getmeal/{meal_id}")
-	public Meal getAMeal(@PathVariable("meal_id") String id){
+	public List<Meal> getAMeal(@PathVariable("meal_id") String id){
 		return mealService.getAMeal(id);
 	}
 }
