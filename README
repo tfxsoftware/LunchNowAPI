@@ -1,0 +1,19 @@
+# LunchNow
+
+LunchNow is a Spring Boot application that serves as a food delivery platform connecting users with local restaurants. The application uses MongoDB for data persistence and provides RESTful APIs for managing users, restaurants, meals, and orders.
+
+## Technologies Used
+
+- Java 19
+- Spring Boot 2.7.4
+- MongoDB
+- Maven
+- Docker
+- Lombok
+
+## Prerequisites
+
+- JDK 19
+- Docker and Docker Compose
+- MongoDB
+- Maven
